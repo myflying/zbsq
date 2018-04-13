@@ -34,7 +34,8 @@ Page({
         types = res.data.channel;
         
         if(types != null && types.length == 4){
-          types[3]['name'] ="全部";
+          types[3]['name'] ="GIF制图";
+          //types[3]['ico'] = "/image/";
         }
 
         banners = res.data.banner;
@@ -128,9 +129,14 @@ Page({
     var index = event.currentTarget.dataset.index;
     console.log(index);
     if(index == 3){
-      this.setData({
-        showModal: true
-      });
+      // this.setData({
+      //   showModal: true
+      // });
+
+      wx.navigateTo({
+        url: '../collection/collection'
+      })
+
       return;
     }
 

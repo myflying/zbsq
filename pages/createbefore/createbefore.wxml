@@ -13,7 +13,7 @@
           <view wx:if="{{item.input_type == 1}}" class='create_content_select'>
               <picker bindchange="bindPickerChange" value="{{item['position']}}" range="{{item['select_value']}}" class='select_bg' 
                 data-select="{{item['select_value']}}" data-index="{{index}}">
-                 <view class="create_content_select_item">
+                 <view class="create_content_select_item"> 
                      <label>{{item['select'][item['position']]['opt_text']}}</label>
                      <image src='../image/down_select_icon.png'></image>
                   </view>

@@ -17,12 +17,6 @@
   </view>
 </view>
 
-<view class='hot-view' wx:if="{{is_hot}}">
-  <image src='/pages/image/hot_icon.png' class='hot-img'></image>
-  <text class='hot-text'>热门素材</text>
-</view>
-
-
 <view class="content-home">
     <view class="img-list">
         <view class="ul">

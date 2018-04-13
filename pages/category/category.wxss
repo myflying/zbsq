@@ -1,26 +1,31 @@
-
+page{
+  width: 100%;
+}
 .container-home {
   width:100%;
   overflow:hidden;
   font-size:12px;
+  background: #f1f1f1;
   font-family: "\5FAE\8F6F\96C5\9ED1";
 }
 
 .img-list{
     width: 100%;
     overflow: hidden;
+    margin-top: 5rpx;
 }
 .img-list .ul{
-    margin-left:-2%;
+    margin-left:-0.5%;
+    width: 100%;
 }
 .img-list .li{
-    width: 48%;
+    width: 49%;
     height: 240rpx;
     overflow: hidden;
     position: relative;
     float:left;
-    margin-left:2%;
-    margin-top:15rpx;
+    margin-left:1%;
+    margin-top:7rpx;
 }
 .img-list .li navigator{
     width: 100%;
@@ -29,6 +34,7 @@
 .item-img{
     width: 100%;
     min-height: 100%;
+    border-radius: 10rpx;
 }
 .is-vip{
   width: 50rpx;

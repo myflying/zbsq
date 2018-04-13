@@ -163,6 +163,7 @@ Page({
     }
   },
   bindPickerChange: function (e) {
+    
     var pos = e.detail.value;
     var pselects = e.currentTarget.dataset.select;
     var index = e.currentTarget.dataset.index;
@@ -173,6 +174,8 @@ Page({
     var flag_input = false;
     if (pselects[pos].indexOf("自定义") > -1) {
       item['flag_input'] = true;
+    }else{
+      item['flag_input'] = false;
     }
     console.log(item)
     this.setData({
@@ -212,7 +215,6 @@ Page({
         requestData += "\"" + i + "\":\"" + value + "\"";
       }
       else if (type == 0) {
-
         var maxlength = field[i]["text_len_limit"];
 
         var value = field[i]["sval"];
@@ -232,6 +234,7 @@ Page({
       } else if (type > 1) {
         img = crop_path;
       }
+
       if (i < field.length - 1) {
         requestData += ",";
       }
@@ -252,6 +255,13 @@ Page({
     }
 
     requestData += "}";
+
+    if(requestData.indexOf(',,') > -1){
+      requestData = requestData.replace(',,',',');
+    }
+    
+    console.log("去除多余的值--->" + requestData);
+
     console.log(img ? "img" : "noimg")
 
     wx.showToast({

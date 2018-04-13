@@ -4,8 +4,10 @@
     "pages/cutInside/cutInside",
     "pages/createbefore/createbefore",
     "pages/category/category",
+    "pages/collection/collection",
+    "pages/gifgenerate/gifgenerate",
     "pages/result/result",
-    "pages/index/index",
+    "pages/gifresult/gifresult",
     "pages/logs/logs"
   ],
   "window": {
