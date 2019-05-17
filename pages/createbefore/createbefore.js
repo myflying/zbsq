@@ -269,7 +269,7 @@ Page({
       icon: 'loading'
     })
 
-    //console.log(requestData)
+    console.log(requestData)
 
     if (img) {
       wx.uploadFile({
@@ -279,7 +279,8 @@ Page({
         formData: {
           'requestData': requestData,
           'id': item_id,
-          'mime': '863062030230011'
+          'mime': '863062030230011',
+          'is_wx': 1
         },
         success: function (res) {
 
@@ -290,9 +291,24 @@ Page({
           } else {
             obj = res.data;
           }
-          wx.navigateTo({
-            url: '../result/result?rimg=' + obj.data + '&title=' + data_files.title
-          })
+
+          if (obj.errCode == 0){
+            wx.navigateTo({
+              url: '../result/result?rimg=' + obj.data + '&title=' + data_files.title
+            })
+          } else if (obj.errCode == -1) {
+            wx.showToast({
+              title: '含有敏感词，请重新输入',
+              icon: 'none'
+            })
+            return;
+          }else{
+            wx.showToast({
+              title: '生成失败',
+              icon:'none'
+            })
+            return;
+          }
         },
         fail: function (res) {
           console.log("create fail--->" + JSON.stringify(res));
@@ -305,7 +321,8 @@ Page({
         data: {
           'requestData': requestData,
           'id': item_id,
-          'mime': '863062030230011'
+          'mime': '863062030230011',
+          'is_wx': 1
         },
         header: {
           'content-type': 'application/x-www-form-urlencoded' // 默认值
@@ -313,9 +330,24 @@ Page({
         success: function (res) {
           
           console.log(res.data);
-          wx.navigateTo({
-            url: '../result/result?rimg=' + res.data.data + '&title=' + data_files.title
-          })
+
+          if (res.data.errCode == 0) {
+            wx.navigateTo({
+              url: '../result/result?rimg=' + res.data.data + '&title=' + data_files.title
+            })
+          } else if (res.data.errCode == -1) {
+            wx.showToast({
+              title: '含有敏感词，请重新输入',
+              icon: 'none'
+            })
+            return;
+          } else {
+            wx.showToast({
+              title: '生成失败',
+              icon: 'none'
+            })
+            return;
+          }
         },
         fail: function (res) {
           console.log("fail2--->" + JSON.stringify(res));

@@ -59,10 +59,21 @@ page{
 }
 
 .create_button{
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-top: 30rpx;
+}
+
+.create-view {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.btn_bg{
+  background: #179B16;
+  width: 100%;
 }
 
 .text_input {
@@ -133,5 +144,21 @@ page{
 }
 .user-remark{
   font-size: 10px;
-  color: #dddddd
+  color: #dddddd;
+  margin-top: 20rpx;
+}
+
+.ad {
+  width: 96%;
+  margin-top: 12rpx;
+  display: flex;
+  margin-left: 2%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-show {
+  width: 100%;
+  height: 135px;
 }

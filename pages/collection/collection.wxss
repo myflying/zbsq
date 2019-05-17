@@ -59,6 +59,7 @@ page{
   height: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 .item-img{
   width: 99%;
@@ -66,6 +67,15 @@ page{
   border-radius: 10rpx;
   margin-top: 10rpx;
 }
+
+.nav-view{
+  width: 99%;
+  height: 100%;
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+}
+
 .load_more{
   width: 100%;
   display: flex;

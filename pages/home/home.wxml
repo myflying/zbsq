@@ -20,14 +20,19 @@
 <view class="content-home">
     <view class="img-list">
         <view class="ul">
-            <view class="li" wx:for="{{array}}" wx:key="id" wx:for-item="item" bindtap='create' data-itmedata='{{item}}'>
-                <view>
-                    <image src="{{item.small_img}}" mode="widthFix" class='item-img'></image>
-                    <!-- <image src='../image/is_vip.png' class='is-vip' wx:if="{{item.is_vip == 1}}"></image> -->
-                    <text>{{item.title}}</text>
-                    <view class="bg"></view>
-                </view>
+          <block wx:for="{{array}}" wx:key="id" wx:for-item="item">
+            <view wx:if='{{ (index) % 20 == 0}}' class='ad'>
+                <ad unit-id="adunit-d276c7617bf7ed08" class="ad-show"></ad>
             </view>
+            <view class="li" bindtap='create' data-itmedata='{{item}}'>
+                  <view>
+                      <image src="{{item.small_img}}" mode="widthFix" class='item-img'></image>
+                      <!-- <image src='../image/is_vip.png' class='is-vip' wx:if="{{item.is_vip == 1}}"></image> -->
+                      <text>{{item.title}}</text>
+                      <view class="bg"></view>
+                  </view>
+            </view>
+          </block>
         </view> 
     </view>
     <view class='load_more' wx:if="{{is_load_more}}"><image src='../image/load_more.gif' class='load_more_image'></image></view>

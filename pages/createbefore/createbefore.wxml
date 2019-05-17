@@ -34,11 +34,13 @@
   </block>
 
   <view class='create_button'>
-      <view class="page__bd page__bd_spacing">
-        <button class="weui-btn" type="primary" bindtap='create'>一键生成</button>
+      <view class="create-view">
+        <button class="btn_bg" type="primary" bindtap='create'>一键生成</button>
       </view>
   </view>
+ <view class='ad'><ad unit-id="adunit-99db53ce4cc2f800" class="ad-show"></ad></view>
   <view class='bottom-user'>
+   
     <label class='user-remark'>素材由用户：{{author_name}} 上传</label>
   </view>
 </view>

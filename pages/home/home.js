@@ -32,8 +32,9 @@ Page({
         wx.stopPullDownRefresh();
         list = res.data.data;
         types = res.data.channel;
-        
+        console.log('home data');
         if(types != null && types.length == 4){
+          types[0]['name'] = "搞怪";
           types[3]['name'] ="GIF制图";
           //types[3]['ico'] = "/image/";
         }
@@ -148,9 +149,9 @@ Page({
     }else{
       obj = type_item;
     }
-
+    console.log('cid--->'+obj.id + '---name' + obj.name)
     wx.navigateTo({
-      url: '../category/category?type_id=' + obj.id + '&type_name=' + obj.name + '&type=1'
+      url: '../category/category?type_id=' + obj.id + '&type_name=' + obj.name + '&type=1' 
     })
   },
 

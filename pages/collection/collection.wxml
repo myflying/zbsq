@@ -8,8 +8,11 @@
   </view>
 
   <view class='img-list'>
-    <view class='img-item' style="{{item.fixStyles}}" wx:for="{{array}}" wx:key="id" wx:for-item="item" bindtap='imagedetail' data-index='{{index}}'>
-      <image src='../image/{{item}}' class='item-img' mode='widthFix'></image>
+    <view class='img-item' style="{{item.fixStyles}}" wx:for="{{array}}" wx:key="id" wx:for-item="item"  data-index='{{index}}'>
+      <image src='../image/{{item}}' class='item-img' mode='widthFix' bindtap='newApp'></image>
+
+<navigator class="nav-view" wx:if='{{isUse}}' target="miniProgram" open-type="navigate" app-id="wxe4519c687bd8430c" path="" extra-data="" version="release"></navigator>
+
     </view>
   </view>
 </scroll-view>

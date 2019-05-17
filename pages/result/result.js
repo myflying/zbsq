@@ -3,7 +3,7 @@ var downUrl;
 var pre_img;
 var show_tip = true;
 var res_title;
-Page({
+Page({ 
   data:{
     result_img:'/pages/image/no_data.png',
     showModalStatus: true
@@ -11,7 +11,7 @@ Page({
   onShareAppMessage:function(res){
     if (res.from === 'button') {
       // 来自页面内转发按钮
-      console.log(res.target)
+      console.log("button--->"+res.target)
     }
     console.log("down--->" + downUrl)
     return {
@@ -138,6 +138,7 @@ Page({
       url: '../home/home'
     })
   },
+  
   powerShow:function(e){
     var currentStatu = e.currentTarget.dataset.statu;
     //显示  

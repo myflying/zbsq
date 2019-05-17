@@ -63,7 +63,7 @@
 .img-list .li navigator{
     width: 100%;
     height: 100%;
-}
+} 
 .item-img{
     width: 100%;
     min-height: 100%;
@@ -250,4 +250,19 @@ input-holder {
 .close-image{
   width: 60rpx;
   height: 60rpx;
+}
+
+.ad {
+  width: 100%;
+  margin-bottom: 6rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ad-show {
+  width: 100%;
+  height: 135px;
+  margin-top: 12rpx;
 }
